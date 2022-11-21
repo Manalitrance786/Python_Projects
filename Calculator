@@ -1,0 +1,50 @@
+#Calculator Program
+class Calculator:
+    
+    #Initialize variables
+    def __init__(self,var1,var2):
+        self.var1=var1
+        self.var2=var2
+    
+    #Function to add two numbers
+    def addFunc(self):
+        return self.var1 + self.var2
+    
+     #Function to Subtract two numbers
+    def subFunc(self):
+        return self.var1 - self.var2
+
+    #Function to Multiply two numbers
+    def mulFunc(self):
+        return self.var1 * self.var2
+    
+    #Function to divide two numbers
+    def divFunc(self):
+        try:
+            return self.var1 / self.var2
+        except:
+            return "Divide by 0 error"
+    
+
+# to continue the program
+while True:
+
+    # Enter first value
+    var1=float(input("Enter first value: "))
+     # Enter Second value
+    var2=float(input("Enter first value: "))
+    #Choose operator of your choice
+    operator=input('Enter choice of operation: Add(+),Sub(-), Mul(*), Div(/)  ')
+    calc = Calculator(var1, var2)
+
+    #decision statement to call functions
+    if operator == 'Add' or operator == '+':
+        print(calc.addFunc())
+    elif operator == 'Sub' or operator == '-':
+        print(calc.subFunc())
+    elif operator == 'Mul' or operator == '*':
+        print(calc.mulFunc())
+    elif operator == 'Div' or operator == '/':
+        print(calc.divFunc())
+    else:
+        print('Operator not found!!')
